@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 
 function Blogs() {
   // State
-  const [serch, setSerch] = useState("");
+  const [search, setSerch] = useState("");
   const [filterBlog, setfilterBlog] = useState([]);
   
   // Effect
   useEffect(() => {
       //กรองข้อมูลชื่อ่บทความ
-      const result = blogs.filter((item)=>item.title.includes(serch))
+      const result = blogs.filter((item)=>item.title.includes(search))
       setfilterBlog(result);
-    }, [serch]);
+    }, [search]);
 
   return (
     <div className="blogs-container">
@@ -22,7 +22,7 @@ function Blogs() {
           type="text"
           placeholder="ค้นหา"
           className="input input-bordered w-24 md:w-auto"
-          value={serch}
+          value={search}
           onChange={(e) => setSerch(e.target.value)}
         />
       </div>
