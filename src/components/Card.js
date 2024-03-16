@@ -1,22 +1,29 @@
 import React from "react";
-import blogs from "../data/blogs";
+import "./Card.css";
 
 const Card = () => {
+
+  const previewImg = {
+    width: '700px',
+    borderRadius: '10px',
+    boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
+  };
+
   return (
     <div>
-      <div className="card-compact w-96 bg-base-100 shadow-xl">
-        {/* Content */}
-        {blogs.map((blogs) => (
-          <content className="card-body items-center text-center" key={blogs.id}>
-            <img src={blogs.image_url} alt="รูปภาพ"/>
-            <h2 className="card-title">{blogs.title}</h2>
-            <p>{blogs.content.substring(0,100)}</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">อ่านเพิ่มเติม</button>
-            </div>
-          </content>
-        ))}
+      <h1>My Project</h1>
+
+      {/* Table */}
+      <div className="blogs-table">
+        <div className="card-show">
+          <img style={previewImg} src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="cover"/>
+          <h1>John Doe</h1>
+          <p className="title">CEO & Founder, Example</p>
+          <p>Harvard University</p>
+          <button className="button"><span>Hover</span></button>
+        </div>
       </div>
+      {/* End */}
     </div>
   );
 };

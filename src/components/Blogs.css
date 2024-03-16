@@ -1,19 +1,67 @@
-.blogs-container{
+.blogs-container {
     width: 96%;
     max-width: 1140px;
     margin: 0 auto;
     margin-top: 2rem;
-}
-
-.card{
+  }
+  
+  .card-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* เปลี่ยนจำนวนคอลัมน์เป็น 4 */
+    align-items: center;
+    text-align: center;
     color: #333;
     gap: 10px;
-    margin-top: 15px;
-    font-style: initial;
-}
-
-.content{
+    font-size: 16px;
+  }
+  
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none !important;
+  }
+  
+  .link:hover {
+    color: rgb(15, 173, 231);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card-blogs {
+    max-width: 300px;
+    font-size: 18px;
+    padding: 0 0.5rem;
+    overflow: hidden;
+  }
+  
+  .imageStyle {
+    display: block;
+    width: 100%; /* ปรับขนาดภาพให้เต็มกว้างของคอลัมน์ */
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 0.3rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .content {
     margin-top: 10px;
     margin-bottom: 20px;
     gap: 5px;
-}
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .card-table {
+      grid-template-columns: repeat(2, 1fr); /* แสดงสองคอลัมน์ในแถวเดียว */
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .card-table {
+      grid-template-columns: repeat(1, 1fr); /* แสดงเฉพาะคอลัมน์เดียวในแถวเดียว */
+    }
+  }
